@@ -2,8 +2,8 @@
 
 本项目是一个Python程序，用于在二维栅格地图中为模拟小车生成平滑的遍历路径。它包括使用优先转弯的深度优先搜索（DFS）进行路径规划，使用B样条进行路径平滑，针对矩形小车模型的碰撞检测，以及将小车运动可视化为MP4或GIF动画。
 
-![演示动画占位符](placeholder_animation.gif)
-*(请将 `placeholder_animation.gif` 替换为脚本生成的实际GIF动画，例如 `smooth_car_progress.gif`)*
+![smooth_car_progress](https://github.com/user-attachments/assets/538de33a-6474-4069-a0dd-4e2671950910)
+
 
 ## 主要功能
 
@@ -48,8 +48,8 @@
 
 1.  **克隆仓库:**
     ```bash
-    git clone <您的仓库URL>
-    cd <您的仓库名称>
+    git clone <(https://github.com/CraftNobody0505/CarLogisticsSimulator)>
+    cd <CraftNobody0505>
     ```
 
 2.  **安装Python依赖:**
