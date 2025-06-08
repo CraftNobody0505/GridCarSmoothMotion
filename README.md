@@ -1,8 +1,7 @@
 GridCarSmoothMotion
-平滑轨迹生成 + 避障 + 动画可视化 —— 在二维栅格地图中模拟小车自然行驶轨迹的 Python 项目。
+🛻 平滑轨迹生成 + 避障 + 动画可视化 —— 在二维栅格地图中模拟小车自然行驶轨迹的 Python 项目。
 
-【简介】
-
+简介
 本项目实现了一个在二维栅格地图中行驶的小车：
 
 利用 DFS 遍历生成控制点；
@@ -15,74 +14,65 @@ GridCarSmoothMotion
 
 适用于路径规划、仿真教学与算法演示等场景。
 
-【特性】
+特性
+✅ 平滑路径生成：轨迹自然流畅；
 
-平滑路径生成：通过样条曲线插值，轨迹自然流畅；
+🚫 障碍物碰撞检测：真实小车尺寸模拟；
 
-障碍物碰撞检测：模拟真实小车尺寸；
+🎞️ 动画可视化：含方向角的动态轨迹；
 
-动画可视化：轨迹可保存为 mp4/gif，含角度与颜色变化；
+🧭 转向优先遍历：更拟人的行驶路线；
 
-方向优先遍历：路径生成更自然；
+📊 导出进度提示：动画导出时显示百分比。
 
-支持进度回调：动画保存时显示百分比。
-
-【快速开始】
-
-克隆仓库：
+快速开始
+克隆项目并运行：
 git clone https://github.com/your-username/GridCarSmoothMotion.git
-
+cd GridCarSmoothMotion
+python GridCarSmoothMotion.py
 安装依赖：
 pip install numpy matplotlib scipy
+输出结果：
 
-运行：
-python GridCarSmoothMotion.py
+smooth_car_progress.mp4：轨迹动画；
 
-默认输出 smooth_car_progress.mp4 或 fallback 的静态图。
+smooth_car_progress_static.png：失败时的静态图。
+使用示例
+也可在其他项目中调用：
+traversal = SmoothCurveCarTraversal(
+    grid_map=[[...]],
+    start_pos_grid=(r, c),
+    car_length=0.7,
+    car_width=0.35,
+    spline_smoothness=0.0,
+    points_per_segment=10
+)
+traversal.visualize("your_output.mp4")
+参数说明
+grid_map：二维数组，0 为通行，1 为障碍；
 
-【如何调用主类】
+start_pos_grid：起点位置 (row, col)；
 
-支持在其他项目中使用核心类：
+car_length / car_width：小车长宽；
 
-SmoothCurveCarTraversal(
-grid_map=[[...]],
-start_pos_grid=(r, c),
-car_length=0.7,
-car_width=0.35,
-spline_smoothness=0.0,
-points_per_segment=10
-).visualize("your_output.mp4")
+spline_smoothness：曲线平滑度；
 
-【参数说明】
+points_per_segment：插值密度。
 
-grid_map：二维列表，0 表示空地，1 为障碍物；
+效果预览
+起点设定	平滑路径	小车动画
+✅ 支持	✅ 支持	✅ 支持
 
-start_pos_grid：起点坐标 (行, 列)；
+若路径生成失败，自动输出静态图作为回退。
 
-car_length / car_width：小车尺寸；
+TODO
+ 支持终点设定与路径闭环；
 
-spline_smoothness：曲线平滑程度；
+ 替换 DFS 为 A*/D* 等更智能算法；
 
-points_per_segment：每段细化的点数。
+ 参数可视化与交互界面；
 
-【效果预览】
+ 添加单元测试与模块分离。
 
-起点设定 ✅
-平滑路径 ✅
-小车动画 ✅
-
-失败时自动输出静态图作为回退。
-
-【TODO】
-
-支持终点设定；
-
-引入 A* 等替代 DFS；
-
-增加交互与调试功能；
-
-添加测试与验证。
-
-【License】
-
+License
 MIT License
